@@ -1,4 +1,4 @@
-#define PIN_LED 13
+#define PIN_LED 7
 unsigned int count, toggle;
 
 void setup() {
@@ -18,14 +18,17 @@ void loop() {
   toggle = toggle_state(count); // toggle LED value.
   digitalWrite(PIN_LED, toggle); //
   delay(1000); //
+  if(count == 12) {
+    while(1)  {}
+  }
+
 }
 
 int toggle_state(int a)  {
   if(a % 2 == 1)  {
-    return 1;
-  }
-  if(a % 2 == 0)  {
     return 0;
   }
+  if(a % 2 == 0)  {
+    return 1;
+  }
 }
-
