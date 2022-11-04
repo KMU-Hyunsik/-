@@ -57,7 +57,7 @@ void loop() {
   float  dist_raw;
   
   // wait until next sampling time. 
-  if (millis() < (last_sampling_time + INTERVAL))
+  if (millis  () < (last_sampling_time + INTERVAL))
     return;
 
   dist_raw = USS_measure(PIN_TRIG, PIN_ECHO); // read distance
